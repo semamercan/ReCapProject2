@@ -13,7 +13,7 @@ namespace ConsoleUI
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            //Kiralanan arabaların listesini gösterelim
+            //Kiralanan arabaların listesini gösterelim.
             Console.WriteLine("List of All Rental Cars:\n");
             Console.WriteLine("No\tDaily Price\tBuying Date\tReturn Date\tRental Days\tTotal Rental Price");
             foreach (var car in carManager.GetAll())
