@@ -43,16 +43,16 @@ namespace ConsoleUI
             //Yeni araba ekleyelim
             Console.WriteLine();
             carManager.Add(new Car { 
-                CarId=7, 
-                BrandId=1, 
-                ColorId=4, 
-                ModelYear=2007, 
-                DailyPrice=450, 
-                Description="Üst sınıf araç", 
-                BuyingOffice="Ankara Yenimahalle", 
-                ReturnOffice="Ankara Maltepe", 
-                BuyingDate=new DateTime(2021,03,10), 
-                ReturnDate=new DateTime(2021,03,13)});
+                CarId=8, 
+                BrandId=4, 
+                ColorId=3, 
+                ModelYear=2017, 
+                DailyPrice=100, 
+                Description="Ekonomik sınıf araç", 
+                BuyingOffice="İzmir Balçova", 
+                ReturnOffice="İzmir Menderes", 
+                BuyingDate=new DateTime(2021,05,22), 
+                ReturnDate=new DateTime(2021,05,28)});
             
             //Yeni eklenen araba ile güncellenen listemizi gösterelim
             Console.WriteLine("\nUpdated List of All Rental Cars:\n");
