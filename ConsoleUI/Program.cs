@@ -54,7 +54,7 @@ namespace ConsoleUI
                 BuyingDate=new DateTime(2021,05,22), 
                 ReturnDate=new DateTime(2021,05,28)});
             
-            //Yeni eklenen araba ile güncellenen listemizi gösterelim
+            //Yeni eklenen araba ile güncellenen listemizi gösterelim.
             Console.WriteLine("\nUpdated List of All Rental Cars:\n");
             Console.WriteLine("No\tDaily Price\tBuying Date\tReturn Date\tRental Days\tTotal Rental Price");
             foreach (var car in carManager.GetAll())
