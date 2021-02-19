@@ -12,10 +12,9 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //AddRental();
+           
             RentalDetails();
             //CarListTest();
-
-
         }
 
         private static void AddRental()
@@ -26,10 +25,12 @@ namespace ConsoleUI
             {
                 rentalManager.Add(new Rental
                 {
-                    CustomerId = 2,
-                    CarId = 7,
-                    RentDate = new DateTime(2021, 03, 22),
-                    ReturnDate = new DateTime(2021, 03, 27)
+                    CustomerId = 5,
+                    CarId = 1011,
+                    RentDate = new DateTime(2021, 06, 04),
+                    ReturnDate = new DateTime(2021, 06, 09),
+                    BrandId=1008,
+                    ColorId=7
                 });
             }
         }
@@ -85,17 +86,16 @@ namespace ConsoleUI
             if (result.Success == true)
             {
                 Console.WriteLine("List of All Rental Cars:\n");
-                Console.WriteLine("Car Name\tColor Name\tDaily Price\tUser Name\tRent Date\tReturn Date\tTotal Rental Day\tTotal Rental Price");
+                Console.WriteLine("Car Name\tColor Name\tDaily Price\tRent Date\tReturn Date\tTotal Rental Day\tTotal Rental Price");
                 foreach (var rental in result.Data)
                 {
-                    Console.WriteLine("{0}\t{1}\t\t{2}\t\t{3}\t{4}\t{5}\t{6}\t{7}",
-                        rental.CarName.Trim(), 
-                        rental.ColorName.Trim(), 
-                        rental.DailyPrice, 
-                        rental.UserName.Trim(),
-                        rental.RentDate.ToShortDateString(), 
+                    Console.WriteLine("{0}\t{1}\t\t{2}\t\t{3}\t{4}\t{5}\t\t\t{6}",
+                        rental.CarName.Trim(),
+                        rental.ColorName.Trim(),
+                        rental.DailyPrice.ToString().Trim(),
+                        rental.RentDate.ToShortDateString(),
                         rental.ReturnDate.ToShortDateString(),
-                        (rental.ReturnDate - rental.RentDate).TotalDays,
+                        (rental.ReturnDate - rental.RentDate).TotalDays.ToString(),
                         (rental.ReturnDate - rental.RentDate).TotalDays * rental.DailyPrice);
                 }
             }
@@ -113,11 +113,7 @@ namespace ConsoleUI
                 ColorId = 3,
                 ModelYear = 2013,
                 DailyPrice = 450,
-                Description = "Orta sınıf araç",
-                RentOfficeId = 3,
-                ReturnOfficeId = 5,
-                BuyingDate = new DateTime(2021, 11, 12),
-                ReturnDate = new DateTime(2021, 11, 17)
+                Description = "Orta sınıf araç"
             });
         }
         private static void UpdatedCarList()

@@ -14,5 +14,7 @@ namespace Entities.Concrete
         public int BrandId { get; set; }
         public DateTime RentDate { get; set; }
         public DateTime ReturnDate { get; set; }
+        public int RentOfficeId { get; set; }
+        public int ReturnOfficeId { get; set; }
     }
 }
