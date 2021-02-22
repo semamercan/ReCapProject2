@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,21 +21,23 @@ namespace Business.Concrete
         }
         public IResult Add(Rental rental)
         {
-            var rentalReturnDate = _rentalDal.GetAll(r => r.CarId == rental.CarId);
+            _rentalDal.Add(rental);
+            return new SuccessResult(Messages.RentalAdded);
+            // var rentalReturnDate = _rentalDal.GetAll(r => r.CarId == rental.CarId);
 
-            if (rentalReturnDate.Count > 0)
-            {
-                foreach (var rentalReturnDatee in rentalReturnDate)
-                {
-                    if (rentalReturnDatee.ReturnDate == null)
-                    {
-                        return new ErrorResult(Messages.RentalReturnDateIsNull);
-                    }
-                }
-            }
+            // if (rentalReturnDate.Count > 0)
+            // {
+            //     foreach (var rentalReturnDatee in rentalReturnDate)
+            //     {
+            //         if (rentalReturnDatee.ReturnDate == null)
+            //         {
+            //             return new ErrorResult(Messages.RentalReturnDateIsNull);
+            //         }
+            //     }
+            // }
 
-            _rentalDal.Add(rental); 
-           return new SuccessResult(Messages.RentalAdded);
+            // _rentalDal.Add(rental); 
+            //return new SuccessResult(Messages.RentalAdded);
         }
 
         public IResult Delete(Rental rental)
