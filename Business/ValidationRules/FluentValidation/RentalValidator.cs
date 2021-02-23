@@ -16,6 +16,8 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(p => p.RentOfficeId).NotEmpty();
             RuleFor(p => p.ReturnOfficeId).NotEmpty();
             RuleFor(p => p.RentDate).NotEmpty();
+            RuleFor(p => p.ReturnDate).NotEmpty();
+            RuleFor(p => p.RentDate > p.ReturnDate);
             
         }
     }

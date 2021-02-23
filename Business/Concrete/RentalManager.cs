@@ -23,21 +23,6 @@ namespace Business.Concrete
         {
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
-            // var rentalReturnDate = _rentalDal.GetAll(r => r.CarId == rental.CarId);
-
-            // if (rentalReturnDate.Count > 0)
-            // {
-            //     foreach (var rentalReturnDatee in rentalReturnDate)
-            //     {
-            //         if (rentalReturnDatee.ReturnDate == null)
-            //         {
-            //             return new ErrorResult(Messages.RentalReturnDateIsNull);
-            //         }
-            //     }
-            // }
-
-            // _rentalDal.Add(rental); 
-            //return new SuccessResult(Messages.RentalAdded);
         }
 
         public IResult Delete(Rental rental)
