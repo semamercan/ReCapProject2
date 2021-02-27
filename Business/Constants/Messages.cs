@@ -43,7 +43,11 @@ namespace Business.Constants
 
         public static string UndeliveredCar = "The car cannot be rented because it is not delivered.";
         public static string DeliveredCar = "The car can be rented.";
+        public static string ImageCountOfCarError = "The car can have up to 5 images";
 
-
+        public static string CarImageListed = "The car image has been successfully listed.";
+        public static string CarImageAdded = "The car image has been successfully added.";
+        public static string CarImageUpdated = "The car image has been successfully updated.";
+        public static string CarImageDeleted = "The car image has been successfully deleted.";
     }
 }
