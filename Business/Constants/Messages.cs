@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -49,5 +50,13 @@ namespace Business.Constants
         public static string CarImageAdded = "The car image has been successfully added.";
         public static string CarImageUpdated = "The car image has been successfully updated.";
         public static string CarImageDeleted = "The car image has been successfully deleted.";
+
+        public static string AuthorizationDenied = "You have no authority.";
+        public static string UserNotFound = "User not found.";
+        public static string PasswordError = "Password Error";
+        public static string SuccessfullLogin = "Successfull Login";
+        public static string UserAlreadyExists = "User already exists.";
+        public static string UserRegistered = "The registration has been successfully created.";
+        public static string AccessTokenCreated = "Access token has been successfully created.";
     }
 }
