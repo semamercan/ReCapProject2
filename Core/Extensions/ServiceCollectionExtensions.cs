@@ -1,4 +1,7 @@
-﻿namespace Core.Extensions
+﻿using Core.Utilities.IoC;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {
