@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Entities.Concrete;
 using Business.Abstract;
+using System.Threading;
 
 namespace WebAPI.Controllers
 {
@@ -22,6 +23,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
+            Thread.Sleep(1000); //VSCode'da spinner için 
             var result = _carService.GetAll();
             if (result.Success)
             {
@@ -59,6 +61,7 @@ namespace WebAPI.Controllers
         [HttpGet("getcardetails")]
         public IActionResult GetCarDetails()
         {
+            
             var result = _carService.GetCarDetails();
             if (result.Success)
             {

@@ -29,8 +29,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorName=co.ColorName,
                                  CompanyName = cu.CompanyName,
                                  UserName = u.FirstName + " " + u.FirstName,
-                                 RentDate = r.RentDate,
-                                 ReturnDate = r.ReturnDate
+                                 RentDate = (DateTime)r.RentDate,
+                                 ReturnDate = (DateTime)r.ReturnDate
                              };
                 return result.ToList();
 

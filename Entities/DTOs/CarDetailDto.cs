@@ -11,8 +11,9 @@ namespace Entities.DTOs
         public string BrandName { get; set; }
         public string ColorName { get; set; }
         public int DailyPrice { get; set; }
-        public DateTime RentDate { get; set; }
-        public DateTime ReturnDate { get; set; }
-
+        public DateTime? RentDate { get; set; }
+        public DateTime? ReturnDate { get; set; }
+        public string ImagePath { get; set; }
+        public string ModelYear { get; set; }
     }
 }

@@ -51,6 +51,8 @@ namespace WebAPI
             //services.AddSingleton<ICustomerService, CustomerManager>();
             //services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
+            services.AddCors();
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -82,6 +84,8 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -89,6 +93,8 @@ namespace WebAPI
             app.UseAuthentication();
 
             app.UseAuthorization();
+            
+            app.UseStaticFiles(); //Resimleri alabilmek için
 
             app.UseEndpoints(endpoints =>
             {
