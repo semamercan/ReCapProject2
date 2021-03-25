@@ -90,11 +90,11 @@ namespace WebAPI
 
             app.UseRouting();
 
+            app.UseStaticFiles(); //Resimleri alabilmek için
+
             app.UseAuthentication();
 
             app.UseAuthorization();
-            
-            app.UseStaticFiles(); //Resimleri alabilmek için
 
             app.UseEndpoints(endpoints =>
             {
